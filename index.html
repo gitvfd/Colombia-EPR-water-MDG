@@ -173,7 +173,7 @@ text {
 
 
       var colorLimit = d3.scale.ordinal()
-                      .domain(["MDG 2015", "National target 2015"])
+                      .domain(["MDG target 2015", "National target 2015"])
                       .range(["#fb3902","#fbc31a"]);
 
       var color = d3.scale.ordinal()
@@ -209,9 +209,9 @@ text {
             .call(yAxis);
 
         svg.append("text")
-            .attr("x",-200)
+            .attr("x",-80)
             .attr("y",-30)
-            .text("% of population who has access to")
+            .text("% of population")
             .style("font-style","italic")
             .attr("transform", function(d) {
                 return "rotate(-90)" 
@@ -255,10 +255,10 @@ text {
             .style("font-weight","bold");
 
         svg2.selectAll("circle")
-            .data([{target:"MDG 2015",color:"fb3902"},{target:"National target 2015",color:"fbc31a"}])
+            .data([{target:"MDG target 2015",color:"fb3902"},{target:"National target 2015",color:"fbc31a"}])
             .enter().append("circle")
                 .attr('cx', function(d) { return width1/10+10})
-                .attr('cy', function(d,i) { return height1/(1+i) })
+                .attr('cy', function(d,i) { return height1/(1+i)-2 })
                 .attr('r',5)
             .style("fill",function(d) { 
               return d.color;  
@@ -266,27 +266,27 @@ text {
             .style("opacity",1);
 
         svg2.selectAll()
-            .data([{target:"MDG 2015",color:"fb3902"},{target:"National target 2015",color:"fbc31a"}])
+            .data([{target:"MDG target 2015",color:"fb3902"},{target:"National target 2015",color:"fbc31a"}])
             .enter().append("text")
             .text(function(d) {return d.target;})
             .attr("x", function(d) { return width1/10 + 20})
-            .attr("y", function(d,i) {return height1/(1+i) + 4 });    
+            .attr("y", function(d,i) {return height1/(1+i) + 2 });    
 
         svg2.selectAll("rect") 
-            .data([{target:"Total",color:"3DA594"},{target:"Urban",color:"237FBD"},{target:"Area",color:"2CA3E0"}])
+            .data([{target:"Total",color:"3DA594"},{target:"Urban",color:"237FBD"},{target:"Rural",color:"2CA3E0"}])
             .enter().append("rect")
             .attr("x", function(d,i) { return width/2+100*i; })
             .attr("width", 20)
-            .attr("y", function(d) { return height1/2; })
+            .attr("y", function(d) { return height1/2 -2; })
             .attr("height", 10)
             .style("fill",function(d) { return d.color;})
             .style("opacity",.9);   
 
           svg2.selectAll() 
-            .data([{target:"Total",color:"3DA594"},{target:"Urban",color:"237FBD"},{target:"Area",color:"2CA3E0"}])
+            .data([{target:"Total",color:"3DA594"},{target:"Urban",color:"237FBD"},{target:"Rural",color:"2CA3E0"}])
             .enter().append("text")
             .attr("x", function(d,i) { return width/2+100*i+25; })
-            .attr("y", function(d) { return height1/2 + 10; })
+            .attr("y", function(d) { return height1/2 + 8; })
             .text(function(d) {
                 return d.target;
             });  

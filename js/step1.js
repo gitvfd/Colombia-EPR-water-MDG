@@ -20,7 +20,7 @@ if(document.getElementById("selectedStep").innerHTML=="step2"){
         });
         
         var targetData=data.filter(function(d) {
-            return(d.area=="Total" && d.year=="1993" && (d.country=="MDG 2015 target" || d.country=="National target 2015"))
+            return(d.area=="Total" && d.year=="1993" && (d.country=="MDG target 2015" || d.country=="National target 2015"))
         });
 		
 		console.log(colombiaData1);
@@ -76,7 +76,7 @@ if(document.getElementById("selectedStep").innerHTML=="step2"){
         });
         
         var targetData=data.filter(function(d) {
-            return(d.area=="Total" && d.year=="1993" && (d.country=="MDG 2015 target" || d.country=="National target 2015"))
+            return(d.area=="Total" && d.year=="1993" && (d.country=="MDG target 2015" || d.country=="National target 2015"))
         });
 		
 		console.log(colombiaData1);

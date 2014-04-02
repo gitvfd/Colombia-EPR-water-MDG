@@ -15,7 +15,7 @@ function step3(){
             return((d.area=="Urban" || d.area=="Rural") && d.year=="2010" && (d.country=="Colombia"))
         });
         var targetData3=data.filter(function(d) {
-            return((d.area=="Urban" || d.area=="Rural") && d.year=="1993" && (d.country=="MDG 2015 target" || d.country=="National target 2015"))});
+            return((d.area=="Urban" || d.area=="Rural") && d.year=="1993" && (d.country=="MDG target 2015" || d.country=="National target 2015"))});
 		console.log(colombiaData3);
 		console.log(targetData3);
 
