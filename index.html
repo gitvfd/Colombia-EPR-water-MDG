@@ -4,12 +4,13 @@
     <meta charset="utf-8">
     <title>Colombia - Water MDG</title>
     <script type="text/javascript" src="http://d3js.org/d3.v3.js"></script>
+    <script src="http://d3js.org/queue.v1.min.js"></script>
     <link href="css/bootstrap.css" rel="stylesheet" media="screen">
 </head>  
 <style>
 
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "HelveticaNeueLT", Helvetica, Arial, sans-serif;
   margin: auto;
   position: relative;
   width: 560px;
@@ -17,6 +18,7 @@ body {
 
 text {
   font: 12px sans-serif;
+  color: #717171;
 }
 
 .axis path {
@@ -25,7 +27,7 @@ text {
 
 .axis line {
   fill: none;
-  stroke: #969696;
+  stroke: #717171;
   shape-rendering: crispEdges;
 }
 
@@ -87,7 +89,7 @@ text {
       cursor: pointer;
       text-align: center;
       text-decoration: none;
-      font: 13px/100% "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font: 13px/100% "HelveticaNeueLT", Helvetica, Arial, sans-serif;
       padding: .25em 1em .45em;
       text-shadow: 0 1px 1px rgba(0,0,0,.3);
       -webkit-border-radius: .5em; 
@@ -113,9 +115,9 @@ text {
 <body>
     <script src="js/step1.js"></script>
     <script src="js/step2.js"></script> 
-    <script src="js/step3.js"></script> 
+    <script src="js/step3.js"></script>
 
-<div id="selectedStep" class="hidden">step3</div>
+<div id="selectedStep" class="hidden">step1</div>
 <div id="tooltip" class="hidden">
     <p><strong><span id="variableTootip">All</span></strong> : </p>
     <p><i><span id="valueTooltip">XX</span> %</i></p>
@@ -127,7 +129,7 @@ text {
 <div class="row">
 <center>
   <h1>Access to water and sanitation</h1>
-  <h2>a Millenium Development Goal</h2>
+  <h2>a Millenium Development Goal for Colombia</h2>
   <h3>
 </center>
   <br>
@@ -174,11 +176,11 @@ text {
 
       var colorLimit = d3.scale.ordinal()
                       .domain(["MDG target 2015", "National target 2015"])
-                      .range(["#fb3902","#fbc31a"]);
+                      .range(["rgb(192,0,0)","rgb(228,108,10)"]);
 
       var color = d3.scale.ordinal()
                       .domain(["Total", "Urban","Rural"])
-                      .range(["#3DA594","#237FBD","#2CA3E0"]);
+                      .range(["rgb(49,133,156)","rgb(41,199,255)","rgb(217,224,33)"]);
 
       var svg = d3.select("#area1").append("svg")
           .attr("width", width + margin.left + margin.right)
@@ -216,15 +218,10 @@ text {
             .attr("transform", function(d) {
                 return "rotate(-90)" 
                 });
-            /**.style("fill","grey")
-            .style("font","20px sans-serif")
-            .style("font-weight","bold");**/
-
 
       
       });
-
-       step1();
+      setTimeout(step1, 100);
 
     </script>
   </div>
@@ -252,10 +249,10 @@ text {
             .style("font-style","normal")
             /**.style("fill","grey")
             .style("font","20px sans-serif")**/
-            .style("font-weight","bold");
+            .style("font-weight","normal");
 
         svg2.selectAll("circle")
-            .data([{target:"MDG target 2015",color:"fb3902"},{target:"National target 2015",color:"fbc31a"}])
+            .data([{target:"MDG target 2015",color:"rgb(192,0,0)"},{target:"National target 2015",color:"rgb(228,108,10)"}])
             .enter().append("circle")
                 .attr('cx', function(d) { return width1/10+10})
                 .attr('cy', function(d,i) { return height1/(1+i)-2 })
@@ -266,14 +263,14 @@ text {
             .style("opacity",1);
 
         svg2.selectAll()
-            .data([{target:"MDG target 2015",color:"fb3902"},{target:"National target 2015",color:"fbc31a"}])
+            .data([{target:"MDG target 2015",color:"rgb(192,0,0)"},{target:"National target 2015",color:"rgb(228,108,10)"}])
             .enter().append("text")
             .text(function(d) {return d.target;})
             .attr("x", function(d) { return width1/10 + 20})
             .attr("y", function(d,i) {return height1/(1+i) + 2 });    
 
         svg2.selectAll("rect") 
-            .data([{target:"Total",color:"3DA594"},{target:"Urban",color:"237FBD"},{target:"Rural",color:"2CA3E0"}])
+            .data([{target:"Total",color:"rgb(49,133,156)"},{target:"Urban",color:"rgb(41,199,255)"},{target:"Rural",color:"rgb(217,224,33)"}])
             .enter().append("rect")
             .attr("x", function(d,i) { return width/2+100*i; })
             .attr("width", 20)
@@ -283,14 +280,13 @@ text {
             .style("opacity",.9);   
 
           svg2.selectAll() 
-            .data([{target:"Total",color:"3DA594"},{target:"Urban",color:"237FBD"},{target:"Rural",color:"2CA3E0"}])
+            .data([{target:"Total",color:"rgb(49,133,156)"},{target:"Urban",color:"rgb(41,199,255)"},{target:"Rural",color:"rgb(217,224,33)"}])
             .enter().append("text")
             .attr("x", function(d,i) { return width/2+100*i+25; })
             .attr("y", function(d) { return height1/2 + 8; })
             .text(function(d) {
                 return d.target;
             });  
-
     </script>
   </div>
 </div>

@@ -96,11 +96,11 @@ textarea {
 }
 body {
   margin: 0;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "HelveticaNeueLT", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 18px;
   font-weight: normal;
-  color: #333333;
+  color: #717171;
   background-color: #ffffff;
 }
 a {
@@ -276,13 +276,13 @@ a:hover {
 }
 p {
   margin: 0 0 9px;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "HelveticaNeueLT", Helvetica, Arial, sans-serif;
   font-size: 13px;
   line-height: 18px;
 }
 p small {
   font-size: 11px;
-  color: #999999;
+  color: #717171;
 }
 .lead {
   margin-bottom: 18px;
@@ -298,8 +298,8 @@ h5,
 h6 {
   margin: 0;
   margin-left: 00px;
-  font-weight: bold;
-  color: #333333;
+  font-weight: normal;
+  color: #717171;
   text-rendering: optimizelegibility;
 }
 h1 small,
@@ -309,7 +309,7 @@ h4 small,
 h5 small,
 h6 small {
   font-weight: normal;
-  color: #999999;
+  color: #717171;
 }
 h1 {
   font-size: 30px;
@@ -346,7 +346,7 @@ h5 {
 }
 h6 {
   font-size: 11px;
-  color: #999999;
+  color: #717171;
   text-transform: uppercase;
 }
 .page-header {

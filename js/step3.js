@@ -1,14 +1,11 @@
 function step3(){
 		g.selectAll("text")
-		.remove()
-		.transition().duration(1000);
+		.remove();
 	svg.selectAll("rect")
-		.remove()
-		.transition().duration(1000);
+		.remove();
 
 	svg.selectAll("circle")
-		.remove()
-		.transition().duration(1000);
+		.remove();
 
 	d3.json("data/water.json", function(error, data) {
         var colombiaData3=data.filter(function(d) {
@@ -24,7 +21,7 @@ function step3(){
 		var bar = svg.selectAll(".bar")
 	      .data(colombiaData3)
 	      .enter().append("rect")
-	      .transition().duration(2500)
+	      .transition().duration(1000)
 	      .attr("class", "bar")
 	      .attr("x", function(d) { 
                 	if(d.area=="Urban")
@@ -41,6 +38,7 @@ function step3(){
 		var circle = svg.selectAll("circle")
 	        .data(targetData3)
 	        .enter().append("circle")
+			.transition().delay(500).duration(500)
 	            .attr('cx', function(d) { 
 	            	if(d.area=="Urban")
 	            		return x(d.indicator);

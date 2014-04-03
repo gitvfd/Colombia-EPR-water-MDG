@@ -1,7 +1,6 @@
 function step2(){
 		g.selectAll("text")
-		.remove()
-		.transition().duration(1000);
+		.remove();
 
 if(document.getElementById("selectedStep").innerHTML=="step3"){
 	svg.selectAll("rect")
@@ -24,7 +23,6 @@ if(document.getElementById("selectedStep").innerHTML=="step3"){
 		var bar = svg.selectAll(".bar")
 	      .data(colombiaData2)
 	      .enter().append("rect")
-	      .transition().duration(2000)
 	      .attr("class", "bar")
 	      .attr("x", function(d) { return x(d.indicator); })
 	      .attr("width", x.rangeBand())
@@ -71,6 +69,7 @@ if(document.getElementById("selectedStep").innerHTML=="step3"){
 	    var circle = svg.selectAll("circle")
             .data(targetData)
             .enter().append("circle")
+			.transition().delay(500).duration(500)
                 .attr('cx', function(d) { return x(d.indicator)+x.rangeBand()/2;})
                 .attr('cy', function(d) { return y(d.value); })
                 .attr('r',5)
@@ -126,7 +125,7 @@ if(document.getElementById("selectedStep").innerHTML=="step3"){
 
 		var bar = svg.selectAll(".bar")
 	      .data(colombiaData2)
-	      .transition().duration(3500)
+	      .transition().duration(2000)
 	      .attr("class", "bar")
 	      .attr("y", function(d) { return y(d.value); })
 	      .attr("height", function(d) { return height - y(d.value); }); 
