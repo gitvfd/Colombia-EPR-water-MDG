@@ -18,7 +18,6 @@ if(document.getElementById("selectedStep").innerHTML=="step3"){
             return(d.area=="Total" && d.year=="1993" && (d.country=="MDG target 2015" || d.country=="National target 2015"))
         });
 
-		console.log(colombiaData2);
 
 		var bar = svg.selectAll(".bar")
 	      .data(colombiaData2)
@@ -121,7 +120,6 @@ if(document.getElementById("selectedStep").innerHTML=="step3"){
             return(d.area=="Total" && d.year=="2010" && (d.country=="Colombia"))
         });
 		
-		console.log(colombiaData2);
 
 		var bar = svg.selectAll(".bar")
 	      .data(colombiaData2)
@@ -130,7 +128,7 @@ if(document.getElementById("selectedStep").innerHTML=="step3"){
 	      .attr("y", function(d) { return y(d.value); })
 	      .attr("height", function(d) { return height - y(d.value); }); 
 
-	    document.getElementById("textToDisplay").innerHTML = "In 2010, Colombia was close to achieving the Millenium development goal on access to safe water but needs to invest more to reach the sanitation goal.";         
+	    document.getElementById("textToDisplay").innerHTML = "In 2010, Colombia was close to achieving the Millenium development goal on access to safe water but needs to invest more to reach the sanitation goal";         
 	
 	    svg.selectAll("rect")
 	        .on("mouseover",function(d){

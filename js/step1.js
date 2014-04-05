@@ -1,7 +1,6 @@
 function step1(){
 	g.selectAll("text")
 	.remove();
-	console.log(document.getElementById("selectedStep").innerHTML);
 
 
 	if(document.getElementById("selectedStep").innerHTML=="step3"){
@@ -22,7 +21,6 @@ function step1(){
 	            return(d.area=="Total" && d.year=="1993" && (d.country=="MDG target 2015" || d.country=="National target 2015"))
 	        });
 			
-			console.log(colombiaData1);
 			
 			var bar = svg.selectAll(".bar")
 		      .data(colombiaData1)
@@ -74,7 +72,6 @@ function step1(){
 	            return(d.area=="Total" && d.year=="1993" && (d.country=="Colombia"))
 	        });
 			
-			console.log(colombiaData1);
 			
 			var bar = svg.selectAll(".bar")
 		      .data(colombiaData1)
@@ -87,7 +84,7 @@ function step1(){
 		      .style("fill",function(d) { return color(d.area);})
 		      .style("opacity",.9);   
 
-		    document.getElementById("textToDisplay").innerHTML = "Since 1993, Colombia substantially developed infrastructure to give its growing population access to safe water and basic sanitation.";    
+		    document.getElementById("textToDisplay").innerHTML = "Since 1993, Colombia substantially developed infrastructure to give its growing population access to safe water and basic sanitation";    
 
 		    svg.selectAll("rect")
 		        .on("mouseover",function(d){

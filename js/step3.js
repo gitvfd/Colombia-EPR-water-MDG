@@ -13,15 +13,12 @@ function step3(){
         });
         var targetData3=data.filter(function(d) {
             return((d.area=="Urban" || d.area=="Rural") && d.year=="1993" && (d.country=="MDG target 2015" || d.country=="National target 2015"))});
-		console.log(colombiaData3);
-		console.log(targetData3);
-
+		
 
 
 		var bar = svg.selectAll(".bar")
 	      .data(colombiaData3)
 	      .enter().append("rect")
-	      .transition().duration(1000)
 	      .attr("class", "bar")
 	      .attr("x", function(d) { 
                 	if(d.area=="Urban")
@@ -52,7 +49,7 @@ function step3(){
 	        })
 	        .style("opacity",1);	      
 
-	    document.getElementById("textToDisplay").innerHTML = "Urban dwellers generally have much better access to safe water and sanitation than the rural population.";    
+	    document.getElementById("textToDisplay").innerHTML = "Urban dwellers generally have much better access to safe water and sanitation than the rural population";    
 	    
 	    svg.selectAll("rect")
 	        .on("mouseover",function(d){

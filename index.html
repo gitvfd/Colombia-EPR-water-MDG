@@ -21,6 +21,13 @@ text {
   color: #717171;
 }
 
+#source {
+  font-size: 10px;
+  font-style:italic;
+  color: #717171;
+  font-family: "HelveticaNeueLT", Helvetica, Arial, sans-serif;
+}
+
 .axis path {
   display: none;
 }
@@ -129,7 +136,7 @@ text {
 <div class="row">
 <center>
   <h1>Access to water and sanitation</h1>
-  <h2>a Millenium Development Goal for Colombia</h2>
+  <h2>Millenium Development Goal for Colombia</h2>
   <h3>
 </center>
   <br>
@@ -286,9 +293,14 @@ text {
             .attr("y", function(d) { return height1/2 + 8; })
             .text(function(d) {
                 return d.target;
-            });  
+            });
+
     </script>
   </div>
 </div>
-
+<br>
+<div class="row">
+  <div id="source" class="span7"><a href="http://dx.doi.org/10.1787/888932997835">Sources: DANE (2012, 2010 and 2008), Encuesta Nacional de Calidad de Vida; Government of Colombia (2012), Informe de Seguimiento. Objetivos de Desarrollo del Milenio; IDEAM, 2012.</a>
+  </div>
+</div>
 </body>
